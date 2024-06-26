@@ -18,7 +18,7 @@ const ItemPage = () => {
   const [bids, setBids] = useState([]);
 
   const endTime = new Date(item.time);
-  const imageurl = `http://localhost:5000/uploads/${item.image}`;
+  const imageurl = `http://liveauction_backend_1:5000/uploads/${item.image}`;
 
   const formatTimeRemaining = () => {
     const timeRemaining = endTime - currentTime;
@@ -40,7 +40,7 @@ const ItemPage = () => {
     if (bidprice > pp) {
       try {
         const response = await axios.post(
-          "http://localhost:5000/biddata",
+          "http://liveauction_backend_1:5000/biddata",
           {
             bidprice,
             itemId: item._id,
@@ -71,13 +71,13 @@ const ItemPage = () => {
     const fetchData = async () => {
       try {
         const updatedItemResponse = await axios.get(
-          `http://localhost:5000/item/${item._id}`
+          `http://liveauction_backend_1:5000/item/${item._id}`
         );
         const updatedItem = updatedItemResponse.data[0];
         setPresentPrice(updatedItem.bidprice);
 
         const bidsResponse = await axios.get(
-          `http://localhost:5000/item/${item._id}`
+          `http://liveauction_backend_1:5000/item/${item._id}`
         );
         setBids(bidsResponse.data);
       } catch (error) {

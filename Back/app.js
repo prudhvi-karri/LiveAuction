@@ -10,19 +10,18 @@ import multer from "multer";
 import biddata from "./models/biddata.js";
 import nodemailer from 'nodemailer'
 const router = express.Router();
-const jwtSecret = 'Prudhvijay57';
+const jwtSecret = process.env.REACT_APP_JWTSECREST;
 
 const app = express()
 app.use(bodyParser.json())
 app.use(cors())
 app.use(express.static('public'))
 
-
-mongoose.connect('mongodb+srv://vijaylingoju111:n8LB4ClA3crySD6A@cluster0.5dnee4a.mongodb.net/test')
+mongoose.connect(process.env.REACT_APP_MONGO_API)
 .then(()=>app.listen(5000))
-.then(()=>console.log("DB Connect successfully & listing to localhost 5000."))
+.then(()=>console.log("DB Connect successfully & listing to liveauction_backend_1 5000."))
 .catch((err)=>console.log(err));
-// http://localhost:5000/postdata
+// http://liveauction_backend_1:5000/postdata
 
 app.post('/signup', async (req, res, next) => {
     const { name,mail, password ,confirmpassword,avatar} = req.body;
@@ -45,13 +44,13 @@ app.post('/signup', async (req, res, next) => {
         var transporter = nodemailer.createTransport({
           service: 'gmail',
           auth: {
-            user: 'prudhvikarri9121@gmail.com',
-            pass: 'lykl sogy wbjl kmlv'
+            user: process.env.REACT_APP_USER,
+            pass: process.env.REACT_APP_PASS
           }
         });
         
         var mailOptions = {
-          from: 'prudhvikarri9121@gmail.com',
+          from: process.env.REACT_APP_USER,
           to: mail,
           subject: 'Live-Auctions Thank you for registering',
           text: 'Dear, '+name+' Thank you for registering in Live Auctions.'

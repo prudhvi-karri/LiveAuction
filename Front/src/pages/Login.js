@@ -18,7 +18,7 @@ function Login() {
     e.preventDefault();
 
     axios
-  .post("http://localhost:5000/login", formData)
+  .post("http://liveauction_backend_1:5000/login", formData)
   .then((res) => {
     console.log(res.status)
     if(res.status===201) {

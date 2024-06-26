@@ -21,7 +21,7 @@ function Account({ nav }) {
     setAuctionsLoading(true);
 
     axios
-      .get("http://localhost:5000/account", {
+      .get("http://liveauction_backend_1:5000/account", {
         headers: {
           "x-token": token,
         },
@@ -30,7 +30,7 @@ function Account({ nav }) {
       .catch((err) => console.log(err));
 
     axios
-      .get("http://localhost:5000/auctionitems")
+      .get("http://liveauction_backend_1:5000/auctionitems")
       .then((res) => {
         setAuctions(res.data);
         setAuctionsLoading(false);

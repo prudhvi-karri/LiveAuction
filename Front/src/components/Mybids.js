@@ -11,7 +11,7 @@ const Mybids = () => {
   useEffect(() => {
     const fetchUserBids = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/mybids', {
+        const response = await axios.get('http://liveauction_backend_1:5000/mybids', {
           headers: {
             'x-token': token, // Include the user's auth token
           },

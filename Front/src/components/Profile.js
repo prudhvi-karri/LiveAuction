@@ -35,7 +35,7 @@ function Profile() {
     
     try {
       const response = await axios.post(
-        "http://localhost:5000/updateprofile",
+        "http://liveauction_backend_1:5000/updateprofile",
         formData,
         {
           headers: {
@@ -52,7 +52,7 @@ function Profile() {
         alert("Profile Updated Successfully");
         setShowUpdateButton(false); 
         // Optionally, update the user data after successful image upload
-        const userDataResponse = await axios.get("http://localhost:5000/account", {
+        const userDataResponse = await axios.get("http://liveauction_backend_1:5000/account", {
           headers: {
             "x-token": token,
           },
@@ -70,7 +70,7 @@ function Profile() {
     
 
     axios
-      .get("http://localhost:5000/account ", {
+      .get("http://liveauction_backend_1:5000/account ", {
         headers: {
           "x-token": token,
         },
@@ -91,7 +91,7 @@ function Profile() {
                 <div>
                   <div className="avatar-container">
                     <img
-                      src={selectedAvatar ? URL.createObjectURL(selectedAvatar) : `http://localhost:5000/uploads/${data.avatar}`}
+                      src={selectedAvatar ? URL.createObjectURL(selectedAvatar) : `http://liveauction_backend_1:5000/uploads/${data.avatar}`}
                       alt="Avatar"
                       className="avatar"
                     />

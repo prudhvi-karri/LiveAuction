@@ -20,7 +20,7 @@ function Signup() {
     e.preventDefault();
 
     try {
-      const result = await axios.post("http://localhost:5000/signup", formData);
+      const result = await axios.post("http://liveauction_backend_1:5000/signup", formData);
 
       if (result.status === 200) {
         setResponseMessage("Sign Up Successful");

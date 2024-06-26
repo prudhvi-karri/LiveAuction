@@ -17,7 +17,7 @@ const AuctionItemCard = ({ item }) => {
     <div className="auction-item-card">
       {/* ... (other code remains the same) */}
       <div className="image-container" style={{ width: "1080px", height: "300px" }}>
-        <img src={"http://localhost:5000/uploads/" + item.image} alt={item.name}  />
+        <img src={"http://liveauction_backend_1:5000/uploads/" + item.image} alt={item.name}  />
       </div>
       <div className="item-details">
         <h3>{item.name}</h3>

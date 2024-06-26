@@ -41,7 +41,7 @@ function PostBid({ onClose }) {
   const handlePostBid = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:5000/postauctionitem", formData, {
+      const response = await axios.post("http://liveauction_backend_1:5000/postauctionitem", formData, {
         headers: {
           "x-token": token,
           "Content-Type": "multipart/form-data",

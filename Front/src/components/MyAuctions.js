@@ -11,7 +11,7 @@ const MyAuctions = () => {
   useEffect(() => {
     const fetchUserAuctions = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/myauctions', {
+        const response = await axios.get('http://liveauction_backend_1:5000/myauctions', {
           headers: {
             'x-token': token, // Include the user's auth token
           },
@@ -34,7 +34,7 @@ const MyAuctions = () => {
           <li key={auction._id} className="auction-item">
             <div className="auction-image">
               <img
-                src={`http://localhost:5000/uploads/${auction.image}`}
+                src={`http://liveauction_backend_1:5000/uploads/${auction.image}`}
                 alt={auction.name}
               />
             </div>
