@@ -45,8 +45,8 @@ app.post('/signup', async (req, res, next) => {
         var transporter = nodemailer.createTransport({
           service: 'gmail',
           auth: {
-            user: 'prudhvikarri9121@gmail.com',
-            pass: 'lykl sogy wbjl kmlv'
+            user: 'youremail@gmail.com',
+            pass: 'yourpasskey'
           }
         });
         
